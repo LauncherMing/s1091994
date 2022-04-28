@@ -9,11 +9,15 @@ namespace web410919946.Controllers
     public class TestController : Controller
     {
         // GET: LMing
+        public ActionResult Index()
+        {
+            return View();
+        }
         public ActionResult HW1()
         {
             return View();
         }
-        public ActionResult Index()
+        public ActionResult HW2()
         {
             return View();
         }
