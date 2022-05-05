@@ -23,6 +23,8 @@ namespace web410919946.Controllers
         }
         public ActionResult HW3()
         {
+            ViewBag.LMing = "27";
+            ViewData["Barry"] = "OvO";
             return View();
         }
     }
