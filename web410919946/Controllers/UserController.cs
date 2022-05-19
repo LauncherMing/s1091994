@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using web410919946.ViewModel;
 
 namespace web410919946.Controllers
 {
@@ -12,29 +13,29 @@ namespace web410919946.Controllers
         // GET: User
         public ActionResult SignUp()
         {
-            return View();
+            return View(new SignUpData());
         }
         [HttpPost]
-        public ActionResult SignUp(String name,String account,String password)
+        public ActionResult SignUp(SignUpData data)
         {//IsNullOrWhiteSpace() need using Microsoft.Ajax.Utilities
-            if (name.IsNullOrWhiteSpace())//if (name == null || name == "")
+            /*if (data.Name.IsNullOrWhiteSpace())//if (name == null || name == "")
             {
-                ViewBag.NameMessage = "請輸入姓名";
+                data.NameMessage = "請輸入姓名";
             }
-            if (account.IsNullOrWhiteSpace())//if (account == null || account == "")
+            if (data.Account.IsNullOrWhiteSpace())//if (account == null || account == "")
             {
-                ViewBag.AccountMessage = "請輸入帳號";
+                data.AccountMessage = "請輸入帳號";
             }
-            if (password.IsNullOrWhiteSpace())//if (password == null || password == "")
+            if (data.Password.IsNullOrWhiteSpace())//if (password == null || password == "")
             {
-                ViewBag.PasswordMessage = "請輸入密碼";
-            }
-            if (!name.IsNullOrWhiteSpace() && !account.IsNullOrWhiteSpace() && !password.IsNullOrWhiteSpace())
+                data.PasswordMessage = "請輸入密碼";
+            }*/
+            if (ModelState.IsValid)
             //if (!(name == null || name == "") && !(account == null || account == "") && !(password == null || password == ""))
             {
                 ViewBag.Message = "註冊成功";
             }
-            return View();
+            return View(data);
         }
     }
 }
