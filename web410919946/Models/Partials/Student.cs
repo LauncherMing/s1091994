@@ -28,5 +28,6 @@ namespace web410919946.Models
         [Display(Name = "Email")]
         [EmailAddress]
         public string Email { get; set; }
+
     }
 }
